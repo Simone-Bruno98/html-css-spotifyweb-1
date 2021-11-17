@@ -1,0 +1,92 @@
+/* Dichiarazioni generali */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smartphone - Width 480px */
+
+/* Header laterale */
+header {
+  width: 50px;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000;
+  text-align: center;
+}
+
+header a {
+  color: #808080;
+}
+
+header a:hover {
+  color: #FFF;
+}
+
+header span, #logo {
+  display: none;
+}
+
+#logo-small {
+  margin-bottom: 10px;
+}
+
+#main-menu .icon {
+  height: 50px;
+  filter: brightness(60%);
+}
+
+#main-menu .icon:hover {
+  filter: brightness(100%);
+}
+
+#main-menu .active {
+  filter: brightness(75%);
+}
+
+#main-menu .home {
+  background: url(../img/home.svg) no-repeat center;
+}
+
+#main-menu .search {
+  background: url(../img/search.svg) no-repeat center;
+}
+
+#main-menu .libreria {
+  background: url(../img/libreria.svg) no-repeat center;
+}
+
+#playlist {
+  display: none;
+}
+
+header .download {
+  font-size: 18px;
+  color: #FFF;
+  margin-bottom: 15px;
+}
+
+header .download a i {
+  font-size: 10px;
+  background-color: transparent;
+  border: 2px #808080 solid;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+header .download a:hover i {
+  border-color: #FFF;
+
+}
+
+header .user .avatar {
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  background: #808080 url(../img/profile.svg) center;
+  border-radius: 50%;
+}
