@@ -17,12 +17,16 @@ a {
   font-weight: normal;
 }
 
+#main-container {
+  display: flex;
+}
+
 /* Smartphone - Width 480px */
 
 /* HEADER LATERALE */
 header {
-  width: 50px;
   height: calc(100vh - 100px);
+  width: 50px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -102,6 +106,39 @@ header .user .avatar {
   background: #808080 url(../img/profile.svg) center;
   border-radius: 50%;
 }
+
+/* MAIN */
+main {
+  height: calc(100vh - 100px);
+  width: 100%;
+  background-color: #141922;
+}
+
+
+/* Upgrade */
+#upgrade {
+  width: 100%;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#upgrade a {
+  display: block;
+  padding: 15px 35px;
+  border: 1px solid #FFF;
+  border-radius: 30px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#upgrade a:hover {
+  transform: scale(1.1, 1.1);
+}
+
+
 
 /* PLAYER */
 /* Sezione sinistra */
