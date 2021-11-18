@@ -10,22 +10,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   color: blue;
+  font-weight: bold;
 }
 
 a {
   text-decoration: none;
-  font-weight: normal;
 }
 
 #main-container {
   display: flex;
+  height: calc(100vh - 100px);
+  overflow: hidden;
 }
 
 /* Smartphone - Width 480px */
 
 /* HEADER LATERALE */
 header {
-  height: calc(100vh - 100px);
   width: 50px;
   padding: 10px;
   display: flex;
@@ -51,32 +52,32 @@ header span, #logo {
   margin-bottom: 10px;
 }
 
-#main-menu .icon {
-  height: 50px;
+header .main-menu .icon {
+  height: 35px;
   filter: brightness(60%);
 }
 
-#main-menu .icon:hover {
+header .main-menu .icon:hover {
   filter: brightness(100%);
 }
 
-#main-menu .active {
+header .main-menu .active {
   filter: brightness(75%);
 }
 
-#main-menu .home {
+header .main-menu .home {
   background: url(../img/home.svg) no-repeat center;
 }
 
-#main-menu .search {
+header .main-menu .search {
   background: url(../img/search.svg) no-repeat center;
 }
 
-#main-menu .libreria {
+header .main-menu .libreria {
   background: url(../img/libreria.svg) no-repeat center;
 }
 
-#playlist {
+header .playlist {
   display: none;
 }
 
@@ -87,16 +88,15 @@ header .download {
 }
 
 header .download a i {
-  font-size: 10px;
+  font-size: 0.5rem;
   background-color: transparent;
-  border: 2px #808080 solid;
+  border: 1px #808080 solid;
   border-radius: 50%;
   padding: 3px;
 }
 
 header .download a:hover i {
   border-color: #FFF;
-
 }
 
 header .user .avatar {
@@ -109,15 +109,17 @@ header .user .avatar {
 
 /* MAIN */
 main {
-  height: calc(100vh - 100px);
   width: 100%;
   background-color: #141922;
+  overflow-y: scroll;
 }
-
 
 /* Upgrade */
 #upgrade {
-  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 50px);
   padding: 20px 10px;
   display: flex;
   flex-direction: row-reverse;
@@ -131,13 +133,161 @@ main {
   border-radius: 30px;
   color: #FFF;
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 #upgrade a:hover {
   transform: scale(1.1, 1.1);
 }
 
+/* Home */
+#home {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Menù home */
+#home .main-menu {
+  width: 100%;
+  list-style: none;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#home .main-menu li {
+  display: inline-block;
+  margin: 10px 15px;
+}
+
+#home .main-menu a {
+  color: #7D7F84;
+}
+
+#home .main-menu a:hover {
+  color: #FFF;
+}
+
+#home .main-menu a.active::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 30px;
+  margin: 3px auto;
+  background-color: #0F0;
+}
+
+/* Row */
+#home .row {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#home .row h2 {
+  color: #FFF;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#home .row h4 {
+  color: #7D7F84;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+#home .row > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+#home .row > div a {
+  display: block;
+  width: 180px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#home .row > div a .titolo {
+  font-size: 1.1rem;
+  color: #FFF;
+  line-height: 1rem;
+  margin-bottom: 10px;
+}
+
+#home .row > div a .sottotitolo {
+  font-size: 0.8rem;
+  color: #7D7F84;
+}
+
+#home .row > div a .cover .fa-play-circle {
+  display: none;
+}
+
+#home .row > div a:hover .cover .fa-play-circle {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding-top: calc(50% - 25px);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 3rem;
+  color: #FFF;
+}
+
+/* Cover */
+#home .cover {
+  height: 180px;
+  background-size: contain;
+  margin-bottom: 20px;
+}
+
+#home .heavy-metal {
+  background-image: url(../img/metal_lifting.jpg);
+}
+
+#home .stranger {
+  background-image: url(../img/stranger.jpeg);
+}
+
+#home .a-quiet-place {
+  background-image: url(../img/aquietplace.jpeg);
+}
+
+#home .split {
+  background-image: url(../img/split.jpeg);
+}
+
+#home .a-cure-for-wellness {
+  background-image: url(../img/cure.jpeg);
+}
+
+#home .sinister {
+  background-image: url(../img/sinister.jpeg);
+}
+
+#home .relase-radar {
+  background-image: url(../img/sinister.jpeg);
+}
+
+#home .daily-mix-1 {
+  background-image: url(../img/mixdaily.jpeg);
+}
+
+#home .lana-del-rey {
+  background-image: url(../img/youg.jpeg);
+}
+
+#home .ludovico-einaudi {
+  background-image: url(../img/einaudi.jpeg);
+}
+
+#home .artisti a > div {
+    border-radius: 50%;
+  }
 
 
 /* PLAYER */
@@ -173,7 +323,6 @@ main {
 
 #player .song a {
   color: #868686;
-  font-weight: bold;
 }
 
 #player .song a:hover {
@@ -182,7 +331,6 @@ main {
 }
 
 #player .song .song-title {
-  font-weight: bold;
   font-size: 0.9rem;
 }
 
@@ -257,6 +405,10 @@ main {
   font-size: 2rem;
 }
 
+#player .controlli-center .fa-play-circle:hover {
+  transform: scale(1.1, 1.1);
+}
+
 #player .controlli-center .timer {
   background-color: blue;
   width: 100%;
@@ -271,7 +423,6 @@ main {
 
 #player .controlli-center .timer span {
   font-size: 0.6rem;
-  font-weight: bold;
   color: #FFF;
 }
 
