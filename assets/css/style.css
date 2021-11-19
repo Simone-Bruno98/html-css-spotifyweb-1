@@ -112,6 +112,12 @@ main {
   width: 100%;
   background-color: #141922;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 /* Upgrade */
@@ -313,6 +319,10 @@ main {
   text-decoration: underline;
 }
 
+#player > div {
+  flex-grow: 1;
+}
+
 /* Sezione sinistra */
 #player .song {
   display: flex;
@@ -358,7 +368,7 @@ main {
   font-size: 1rem;
 }
 
-/* Barre */
+/* Barra player */
 #player .barra {
   height: 5px;
   background-color: #5A5A5A;
@@ -374,8 +384,13 @@ main {
 }
 
 #player .barra .current i.fa-circle {
+  display: none;
   font-size: 0.8rem;
   color: #FFF;
+}
+
+#player .barra:hover .current i.fa-circle {
+  display: block;
 }
 
 #player .barra:hover .current {
@@ -384,12 +399,12 @@ main {
 
 /* Sezione centrale */
 #player .controlli-center {
-  background: red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  flex-grow: 2;
   font-size: 1.2rem;
 }
 
@@ -410,7 +425,6 @@ main {
 }
 
 #player .controlli-center .timer {
-  background-color: blue;
   width: 100%;
   display: flex;
   justify-content: space-between;
